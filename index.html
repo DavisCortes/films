@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d0d0d" />
+  <title>Смотреть — Mini App</title>
+
+  <!-- Telegram Web App SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ==========================================
+       1. LANDING SCREEN
+       ========================================== -->
+  <div id="landing" class="screen active">
+    <!-- Fullscreen poster background -->
+    <div class="poster-bg"></div>
+
+    <div class="landing-content">
+      <span class="badge">Новый эпизод</span>
+      <h1>Stranger Things</h1>
+      <p class="meta">Сезон 4 · Серия 9 · 1ч 22м</p>
+      <p class="description">
+        План Векны наконец раскрыт. Команда готовится к опасному столкновению
+        в Изнанке — где шансы явно не на их стороне.
+      </p>
+
+      <button id="btn-watch" class="btn-watch" aria-label="Смотреть видео">
+        <!-- Play icon -->
+        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+        Смотреть
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       2. ADVERTISEMENT SCREEN
+       🔽 REPLACE: Swap .ad-banner contents with a real ad SDK integration
+       ========================================== -->
+  <div id="ad-screen" class="screen">
+    <div class="ad-container">
+
+      <!-- Placeholder ad banner -->
+      <div class="ad-banner">
+        <span class="ad-label">Реклама</span>
+        <span class="ad-title">Ваша реклама здесь</span>
+        <button class="ad-cta">Подробнее</button>
+      </div>
+
+      <!-- Circular countdown timer -->
+      <div class="timer-ring">
+        <svg width="72" height="72" viewBox="0 0 72 72">
+          <circle class="ring-bg" cx="36" cy="36" r="32"/>
+          <circle class="ring-fg" cx="36" cy="36" r="32"/>
+        </svg>
+        <div class="ring-text">15</div>
+      </div>
+
+      <p class="ad-timer">Реклама закончится через</p>
+      <p class="ad-skip"></p>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       3. VIDEO PLAYER SCREEN
+       ========================================== -->
+  <div id="player-screen" class="screen">
+    <div class="player-wrapper">
+      <div class="video-container">
+
+        <!--
+          🔽 REPLACE: Set your real video source URL in app.js CONFIG.videoSrc
+          or directly via the src attribute below.
+        -->
+        <video id="video" playsinline webkit-playsinline preload="metadata"></video>
+
+        <!-- Big center play button overlay -->
+        <div class="play-overlay">
+          <div class="circle">
+            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+
+        <!-- Custom controls -->
+        <div class="controls">
+          <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+          </div>
+          <div class="controls-row">
+            <div class="left">
+              <!-- Play / Pause -->
+              <button id="btn-play" class="ctrl-btn" aria-label="Воспроизвести или Пауза">
+                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <span class="time-display">0:00 / 0:00</span>
+            </div>
+            <div class="right">
+              <!-- Fullscreen -->
+              <button id="btn-fullscreen" class="ctrl-btn" aria-label="Полный экран">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3 3h6v2H5v4H3V3zm12 0h6v6h-2V5h-4V3zM3 15h2v4h4v2H3v-6zm16 4h-4v2h6v-6h-2v4z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Episode info -->
+      <div class="episode-info">
+        <h2>Stranger Things</h2>
+        <p class="ep-meta">Сезон 4 · Серия 9 · 1ч 22м</p>
+        <p class="ep-desc">
+          План Векны наконец раскрыт. Команда готовится к опасному столкновению
+          в Изнанке — где шансы явно не на их стороне.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application logic -->
+  <script src="app.js"></script>
+</body>
+</html>
