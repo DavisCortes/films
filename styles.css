@@ -288,6 +288,25 @@ html, body {
 }
 .gdrive-player.hidden { display: none; }
 
+/* Fallback button for Telegram WebView */
+.gdrive-fallback {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.gdrive-fallback:active { background: var(--accent-hover); }
+.gdrive-fallback.hidden { display: none; }
+
 /* Controls */
 .controls {
   position: absolute; bottom: 0; left: 0; right: 0;
