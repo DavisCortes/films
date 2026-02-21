@@ -84,7 +84,7 @@
         {
           title: 'Сезон 1',
           episodes: [
-            { num: 1, title: 'Серия 1', duration: '120 мин', desc: 'Начало правления султана Сулеймана и появление Александры (Хюррем) во дворце.', videoSrc: 'gdrive:1uuwJkFKFIY9Mrhq9cIdFc8D_RYh4zDpe' },
+            { num: 1, title: 'Серия 1', duration: '120 мин', desc: 'Начало правления султана Сулеймана и появление Александры (Хюррем) во дворце.', videoSrc: 'https://archive.org/download/1-1_20260221_202602/%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%BB%D0%B5%D0%BF%D0%BD%D1%8B%D0%B9_%D0%B2%D0%B5%D0%BA_1_%D1%81%D0%B5%D0%B7%D0%BE%D0%BD_-_1_%D1%81%D0%B5%D1%80%D0%B8%D1%8F.mp4' },
           ]
         }
       ]
