@@ -75,7 +75,7 @@
     {
       id: 'muhtesem-yuzyil',
       title: 'Великолепный век',
-      poster: 'https://image.tmdb.org/t/p/w500/o3oGAkHMkgFpnMpOgyRUYiExyjx.jpg',
+      poster: 'https://image.tmdb.org/t/p/w500/UDvmQWnmIr9U6ZRB1k9ULXBow3.jpg',
       genre: 'Драма, Исторический',
       year: '2011–2014',
       badge: 'Новинка',
