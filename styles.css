@@ -1,5 +1,5 @@
 /* =============================================
-   Telegram Mini App — Styles v2
+   Telegram Mini App вЂ” Styles v2
    Netflix-style dark theme, mobile-first
    ============================================= */
 
@@ -278,6 +278,15 @@ html, body {
   object-fit: contain;
   display: block;
 }
+.video-container video.hidden { display: none; }
+
+/* Google Drive iframe player */
+.gdrive-player {
+  width: 100%; height: 100%;
+  border: none;
+  display: block;
+}
+.gdrive-player.hidden { display: none; }
 
 /* Controls */
 .controls {
@@ -366,6 +375,9 @@ video::-webkit-media-controls-panel { display: none !important; }
 .video-container.is-fullscreen video {
   width: 100%; height: 100%;
   object-fit: contain;
+}
+.video-container.is-fullscreen .gdrive-player {
+  width: 100%; height: 100%;
 }
 .video-container.is-fullscreen .controls {
   padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
