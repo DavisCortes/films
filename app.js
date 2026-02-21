@@ -73,6 +73,23 @@
       ]
     },
     {
+      id: 'muhtesem-yuzyil',
+      title: 'Великолепный век',
+      poster: 'https://image.tmdb.org/t/p/w500/o3oGAkHMkgFpnMpOgyRUYiExyjx.jpg',
+      genre: 'Драма, Исторический',
+      year: '2011–2014',
+      badge: 'Новинка',
+      description: 'История любви султана Сулеймана Великолепного и Хюррем Султан, которая изменила ход истории Османской империи.',
+      seasons: [
+        {
+          title: 'Сезон 1',
+          episodes: [
+            { num: 1, title: 'Серия 1', duration: '120 мин', desc: 'Начало правления султана Сулеймана и появление Александры (Хюррем) во дворце.', videoSrc: 'https://drive.google.com/uc?export=download&id=1uuwJkFKFIY9Mrhq9cIdFc8D_RYh4zDpe' },
+          ]
+        }
+      ]
+    },
+    {
       id: 'dark',
       title: 'Тьма (Dark)',
       poster: 'https://image.tmdb.org/t/p/w500/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg',
