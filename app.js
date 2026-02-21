@@ -318,15 +318,34 @@
     if (isGDrive(ep.videoSrc)) {
       // Google Drive — use iframe embed player
       const fileId = ep.videoSrc.replace('gdrive:', '');
-      iframe.src = `https://drive.google.com/file/d/${fileId}/preview`;
+      const driveUrl = `https://drive.google.com/file/d/${fileId}/preview`;
+      iframe.src = driveUrl;
       iframe.classList.remove('hidden');
       video.classList.add('hidden');
       overlay.classList.add('hidden');
       controls.classList.add('hidden');
       video.removeAttribute('src');
       video.load();
+
+      // Show fallback button (for Telegram WebView where iframe may not work)
+      const fallbackBtn = $('#gdrive-fallback');
+      if (fallbackBtn) {
+        const viewUrl = `https://drive.google.com/file/d/${fileId}/view`;
+        fallbackBtn.classList.remove('hidden');
+        fallbackBtn.onclick = () => {
+          if (window.Telegram && window.Telegram.WebApp) {
+            window.Telegram.WebApp.openLink(viewUrl);
+          } else {
+            window.open(viewUrl, '_blank');
+          }
+        };
+      }
       return;
     }
+
+    // Hide fallback button for regular videos
+    const fallbackBtn = $('#gdrive-fallback');
+    if (fallbackBtn) fallbackBtn.classList.add('hidden');
 
     // Regular video — use HTML5 player
     iframe.classList.add('hidden');
@@ -470,6 +489,11 @@
       video.pause();
       video.removeAttribute('src');
       video.load();
+      // Also clear iframe
+      const iframe = $('#gdrive-player');
+      if (iframe) { iframe.removeAttribute('src'); iframe.classList.add('hidden'); }
+      const fb = $('#gdrive-fallback');
+      if (fb) fb.classList.add('hidden');
       showScreen(screens.series);
     });
 
